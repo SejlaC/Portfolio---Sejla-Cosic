@@ -11,6 +11,34 @@
 }
 
 :root {
-    --bg-color:rgb(130, 59, 196);
+    --bg-color:rgb(234, 162, 232);
     --second-bg-color:#112;
+    --text-color:#fff;
 }
+
+html {
+    font-size: 62.5;
+    overflow-x: hidden;
+}
+
+::-webkit-scrolbar- {
+    width: 15px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: crimson;
+    width: 40px;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* Header Section code */
