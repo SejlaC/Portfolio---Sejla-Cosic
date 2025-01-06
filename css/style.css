@@ -42,3 +42,21 @@ section {
 }
 
 /* Header Section code */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 9%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.logo a {
+    color: #fff;
+}
