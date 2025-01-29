@@ -59,4 +59,51 @@ header {
 
 .logo a {
     color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.logo a span {
+    color: rgba(126, 12, 164, 0.782);
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: flex;
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+    text-transform: none;
+    line-height: normal;
+    overflow: visible;
+}
+
+button span {
+    color: #fff; 
+}
+
+.menu li {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+li>a>button {
+    position: relative;
+    display: grid;
+    place-content: center;
+    grid-template-areas: "stack";
+    padding: ;
 }
