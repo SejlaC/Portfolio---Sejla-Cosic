@@ -105,5 +105,34 @@ li>a>button {
     display: grid;
     place-content: center;
     grid-template-areas: "stack";
-    padding: ;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+li>a>button>span {
+    transition: all 300ms ease-in-out;
+    grid-area: stack;
+}
+
+li>a>button>span:last-of-type {
+    margin-top: 0.25rem;
+    transform: scale(0);
+    transition-delay: 0ms;
+    border-radius: 50%;
+}
+
+li > a > button span {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+li > a > button:focus-visible > span:first-of-type,
+li > a > button:hover > span:first-of-type {
+    transform: scale(0);
+}
+
+li > a > button:focus-visible > span:last-of-type,
+li > a > button:hover > span:last-of-type {
+    transform: scale(1);
+    color: rgba(126, 12, 164, 0.782);
 }
