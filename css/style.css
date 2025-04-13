@@ -136,3 +136,19 @@ li > a > button:hover > span:last-of-type {
     transform: scale(1);
     color: rgba(126, 12, 164, 0.782);
 }
+
+.menu a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-left: 4rem;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.menu-btn {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;   
+}
+
