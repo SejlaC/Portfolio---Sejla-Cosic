@@ -1,3 +1,7 @@
+:root {
+   -- 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -152,3 +156,8 @@ li > a > button:hover > span:last-of-type {
     display: none;   
 }
 
+.home {
+    display: flex;
+    align-items: center;
+    background-color: ;
+}
