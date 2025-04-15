@@ -11,32 +11,15 @@
 }
 
 :root {
-    --bg-color:rgb(234, 162, 232);
-    --second-bg-color:#112;
-    --text-color:#fff;
-}
-
-.home {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Twee kolommen: tekst en afbeelding */
-    gap: 2rem;
-    align-items: center;
-    padding: 5rem 9%;
+    --bg-color: rgb(234, 162, 232);
+    --second-bg-color: #112;
+    --text-color: #fff;
+    --accent-color: rgba(126, 12, 164, 0.782);
 }
 
 html {
-    font-size: 62.5;
+    font-size: 62.5%;
     overflow-x: hidden;
-}
-
-::-webkit-scrolbar- {
-    width: 15px;
-
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: crimson;
-    width: 40px;
 }
 
 body {
@@ -44,17 +27,17 @@ body {
     color: var(--text-color);
 }
 
-section {
-    min-height: 100vh;
-    padding: 10rem 9% 2rem;
+/* breedte van de scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
 }
 
-/* Header Section code */
+
+/* Header */
 header {
     position: fixed;
     width: 100%;
     top: 0;
-    right: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -67,102 +50,69 @@ header {
 
 .logo a {
     color: #fff;
-    font-size: 35px;
+    font-size: 3.5rem;
     font-weight: 600;
 }
 
 .logo a span {
-    color: rgba(126, 12, 164, 0.782);
+    color: var(--accent-color);
     transition: all 0.3s ease;
 }
 
 .menu {
     display: flex;
+    gap: 4rem;
 }
 
-button {
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    font-size: inherit;
-    font-family: inherit;
-    color: inherit;
-    text-decoration: none;
-    text-transform: none;
-    line-height: normal;
-    overflow: visible;
-}
-
-button span {
-    color: #fff; 
-}
-
-.menu li {
-    display: flex;
-    gap: 1rem;
-    font-size: 1.4rem;
-    color: #fff;
-}
-
-li>a>button {
-    position: relative;
+.menu li button {
     display: grid;
-    place-content: center;
     grid-template-areas: "stack";
     padding: 0 1.5rem;
     text-transform: uppercase;
     font-weight: 300;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
 }
 
-li>a>button>span {
-    transition: all 300ms ease-in-out;
+.menu li button span {
     grid-area: stack;
+    transition: all 300ms ease-in-out;
 }
 
-li>a>button>span:last-of-type {
+.menu li button span:last-of-type {
     margin-top: 0.25rem;
     transform: scale(0);
     transition-delay: 0ms;
     border-radius: 50%;
 }
 
-li > a > button span {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-li > a > button:focus-visible > span:first-of-type,
-li > a > button:hover > span:first-of-type {
+.menu li button:hover span:first-of-type {
     transform: scale(0);
 }
 
-li > a > button:focus-visible > span:last-of-type,
-li > a > button:hover > span:last-of-type {
+.menu li button:hover span:last-of-type {
     transform: scale(1);
-    color: rgba(126, 12, 164, 0.782);
-}
-
-.menu a {
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-left: 4rem;
-    transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
+    color: var(--accent-color);
 }
 
 .menu-btn {
+    display: none;
     color: #fff;
-    font-size: 23px;
+    font-size: 2.3rem;
     cursor: pointer;
-    display: none;   
 }
 
+/* Home */
 .home {
-    display: flex;
-    align-items: center;   
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 4rem;
+    padding: 10rem 9%;
+    min-height: 100vh;
 }
 
 .home-img img {
@@ -173,7 +123,6 @@ li > a > button:hover > span:last-of-type {
     animation: borderAnimation 5s linear infinite;
 }
 
-/*  Deze animatie laat de border-radius van een element vloeiend veranderen, waardoor het een organisch, blob-achtig effect krijgt. */
 @keyframes borderAnimation {
     0% {
         border-radius: 51% 49% 48% 52% / 49% 49% 51% 51%;
@@ -181,114 +130,54 @@ li > a > button:hover > span:last-of-type {
     35% {
         border-radius: 60% 40% 57% 43% / 40% 54% 46% 60%;
     }
-
     65% {
         border-radius: 67% 33% 68% 32% / 27% 70% 30% 73%;
     }
-
     100% {
         border-radius: 51% 49% 48% 52% / 49% 49% 51% 51%;
     }
 }
 
-
 .featured-text {
-    position: relative;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    min-height: 50vh;
-    margin-bottom: -200px;
     flex-direction: column;
-    width: 60%; 
+    justify-content: center;
+    width: 100%;
 }
 
-/* Stijl voor de "Hallo, ik ben" */
 .featured-text .hello {
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: 500;
-    margin-bottom: -20px;
-    color:aliceblue;
+    color: aliceblue;
+    margin-bottom: -2rem;
 }
 
-/* Stijl voor de naam of belangrijke tekstregel */
 .featured-name {
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: 600;
-    color: rgba(126, 12, 164, 0.782);
-    margin-block: 20px;
-    margin-bottom: 10px;
-}
-
-#SliderValue {
-    display: flex;
-    font-family: sans-serif;
-    color: rgba(126, 12, 164, 0.782);
-    font-size: 70px;
-    font-weight: 600;
-}
-
-.start {
-    opacity: 0;
-}
-
-.animation {
-    animation: fade .3s forwards;
-}
-
-/* Fade-in animatie (op dit moment verandert opacity en positie niet echt) */
-@keyframes fade {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-.holder-animation {
-    animation: holder 4s;
-}
-
-@keyframes holder {
-    0% {
-        opacity: 1;
-    }
-
-    95% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    color: var(--accent-color);
+    margin: 2rem 0 1rem;
 }
 
 .featured-text-info {
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
 }
 
 .social_icons {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: -5px;
-    gap: 32px;
+    gap: 3rem;
 }
 
 .social_icons i {
+    font-size: 1.6rem;
     color: #ddd;
-    font-size: 16px;
     background-color: transparent;
-    margin: 5px;
     height: 40px;
     width: 40px;
     line-height: 40px;
     text-align: center;
-    box-shadow: 0px 1px 5px 3px rgba(126, 12, 164, 0.782);
+    box-shadow: 0px 1px 5px 3px var(--accent-color);
     border-radius: 50%;
     transition: 0.5s;
 }
@@ -297,68 +186,193 @@ li > a > button:hover > span:last-of-type {
     transform: scale(1.2);
 }
 
-/* "About" code */
-
+/* About Section */
 .about {
     background-color: #111;
-    min-height: 50vh;
+    padding: 10rem 9%;
 }
 
 .about-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
 }
 
+.title_h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.about p {
+    font-size: 2rem;
+    color: #fff;
+    margin: 1.5rem 0;
+}
+
+.about_social {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.about_social i {
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    background-color: transparent;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent-color);
+    transition: 0.5s;
+}
+
+.about_social i:hover {
+    transform: scale(1.5);
+    border: 1px solid rgb(182, 8, 138);
+}
+
+.btn-b {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-b:hover {
+    color: var(--accent-color);
+    background: none;
+    border: 2px solid var(--accent-color);
+}
+
+/* Projects */
+.projects {
+    padding: 10rem 9%;
+    background-color: var(--second-bg-color);
+  }
+  
+  .projects .heading {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 5rem;
+    color: var(--text-color);
+  }
+  
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+  }
+  
+  .project-box {
+    background: #222;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    border-top: 4px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-box i {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-box h3 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  .project-box p {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  
+  .project-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /*Contact*/
+  .contact {
+    padding: 10rem 9%;
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .contact .heading {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .contact form {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .input-box input,
+  .contact textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.5rem;
+  }
+  
+  .input-box input::placeholder,
+  .contact textarea::placeholder {
+    color: #777;
+  }
+  
+  .contact textarea {
+    resize: none;
+    height: 200px;
+  }
+  
+  .contact .btn-b {
+    width: fit-content;
+    align-self: center;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 2rem 9%;
+    text-align: center;
+    background: #000;
+    color: #999;
+    font-size: 1.4rem;
+  }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Mobiel */
+/* Responsive Media Queries */
 @media (max-width: 768px) {
     .home {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 5rem 5%;
     }
 
     .home-img img {
@@ -381,9 +395,12 @@ li > a > button:hover > span:last-of-type {
         flex-direction: column;
         padding: 20px 5%;
     }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
     .home {
         grid-template-columns: 1fr 1fr;
@@ -404,7 +421,6 @@ li > a > button:hover > span:last-of-type {
     }
 }
 
-/* Desktop */
 @media (min-width: 1025px) {
     .home {
         grid-template-columns: 1fr 1fr;
@@ -424,8 +440,3 @@ li > a > button:hover > span:last-of-type {
         padding: 40px 9%;
     }
 }
-
-
-
-
-
