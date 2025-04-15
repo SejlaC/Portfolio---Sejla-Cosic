@@ -285,6 +285,28 @@ li > a > button:hover > span:last-of-type {
     background-color: transparent;
     margin: 5px;
     height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0px 1px 5px 3px rgba(126, 12, 164, 0.782);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.social_icons i:hover {
+    transform: scale(1.2);
+}
+
+/* "About" code */
+
+.about {
+    background-color: #111;
+    min-height: 50vh;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 
